@@ -55,7 +55,7 @@ function buttonClick(e) {
       var calcDecimal = document.getElementById("decimals").value;
       //The line below creates a variable with the name of buttonValue. This variable is then assigned the value of the value attribute of the event object target
       var buttonValue = e.target.value;
-
+      //The switchcase below creates a series of responses to certain clicks on the calculator. This will tell he calculator how to deal with certain functions. It also sets a default case that will be run if none of the other cases are run. 
       switch (buttonValue) {
             case "del":
                   calcValue = "";
@@ -79,11 +79,13 @@ function buttonClick(e) {
       document.getElementById("calcWindow").focus();
 }
 
-//The 
+//The code block below creates a function with the name of calcKeys. The functions is passed the parameter of e. This function allows for the user to use keyboard keys when using the calculator.
 function calcKeys(e) {
+      //The line below creates a variable with the name of calcValues which is assigned the value fo the value attribute of the element with the id of calcWindow.
       var calcValue = document.getElementById("calcWindow").value;
+      //The comment above applied heere as well, the only difference being the variaable name and the id it is retrieving the value attribute from.
       var calcDecimal = document.getElementById("decimals").value;
-
+      //The code block below creates a switchcase which outlines various reactions thta the program should have when cretain keyboard keys are pressed by the user. 
       switch (e.key) {
             case "Delete":
                   calcValue = "";
@@ -96,6 +98,7 @@ function calcKeys(e) {
                   break;
                   e.preventDefault();
       }
+      //The line below states that the value attrubute of the element with an if of calcWindows will be reassigned the value of calcValue.
       document.getElementById("calcWindow").value = calcValue;
 }
 
